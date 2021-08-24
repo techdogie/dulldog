@@ -8,111 +8,744 @@
 </head>
 <body>
     <pre>
-    Python
 
-    1. Program to convert the given temperature from Fahrenheit to Celcius and vice versa depending upon user’s choice.
-        
-    While True:
-    print(&quot;1: Celcius to Fahrenheit&quot;);
-    print(&quot;2: Fahrenheit to Celcius&quot;);
-    print(&quot;3: Exit&quot;);
-    ch=int(input(&quot;Enter your choice &quot;));
-    if ch == 1:
-       cel = float(input(&quot;Enter temperature in Celcius &quot;));
-       fah = (cel * 9/5) + 32;
-       print(&quot;%f Celcius = %f Fahrenheit&quot; %(cel, fah));
-    if ch == 2:
-       fah = float(input(&quot;Enter temperature in Fahrenheit &quot;));
-       cel = (fah - 32) * 5/9;
-       print(&quot;%f Fahrenheit = %f Celcius&quot; %(fah, cel));
-    if ch &gt;= 3:
-       exit();
-    2. Program to calculate total marks, percentage and grade of student. Marks obtained in each of three subjects are to be input by the user. Assign grades according to the following criteria:
-       Grade A: Percentage &gt;= 80
-       Grade B: Percentage &gt;= 70 or Percentage == 60
-       Grade C: Percentage &gt;= 60 or Percentage == 40
-       Grade D: Percentage &gt;= 40
-       Grade E: Percentage &lt;40
+   Python programing
+
+   1. Program to convert the given temperature from Fahrenheit to Celcius and vice versa depending upon user’s choice.
+
+      while True:
+      print(&quot;1: Celcius to Fahrenheit&quot;);
+      print(&quot;2: Fahrenheit to Celcius&quot;);
+      print(&quot;3: Exit&quot;);
+      ch=int(input(&quot;Enter your choice &quot;));
+      if ch == 1:
+         cel = float(input(&quot;Enter temperature in Celcius &quot;));
+         fah = (cel * 9/5) + 32;
+         print(&quot;%f Celcius = %f Fahrenheit&quot; %(cel, fah));
+      if ch == 2:
+         fah = float(input(&quot;Enter temperature in Fahrenheit &quot;));
+         cel = (fah - 32) * 5/9;
+         print(&quot;%f Fahrenheit = %f Celcius&quot; %(fah, cel));
+      if ch &gt;= 3:
+         exit();
+
+
+   2. Program to calculate total marks, percentage and grade of student. Marks obtained in each of three subjects are to be input by the user. Assign grades according to the following criteria:
+      Grade A: Percentage &gt;= 80
+      Grade B: Percentage &gt;= 70 or Percentage == 60
+      Grade C: Percentage &gt;= 60 or Percentage == 40
+      Grade D: Percentage &gt;= 40
+      Grade E: Percentage &lt; 40
+
+      sub1 = int(input(&quot;Enter first subject marks: &quot;));
+      sub2 = int(input(&quot;Enter second subject marks: &quot;));
+      sub3 = int(input(&quot;Enter third subject marks: &quot;));
+      marks = sub1 + sub2 + sub3;
+      tmarks = 300;
+      print(&quot;Obtained marks = &quot;, marks);
+      per = (marks / tmarks) * 100;
+      print(&quot;Percentage of Student is &quot;, per);
+      if(per &gt;= 80):
+         print(&quot; Grade A&quot;);
+      elif(per &gt;= 70 or per == 60):
+         print(&quot; Grade B&quot;);
+      elif(per &gt;= 60 or per == 40):
+         print(&quot; Grade C&quot;);
+      elif(per &gt;= 40):
+         print(&quot; Grade D&quot;);
+      elif(per &lt; 40):
+         print(&quot; Grade E&quot;);
+
+
+   3. Program, using user defined functions to find the area of rectangle, square, circle and triangle by accepting suitable input parameters from user.
+
+      def arect(l, b):
+      a = l * b;
+      print(&quot;Area of Rectangle is &quot;, a);
+      return;
+      def asquare(s):
+         a = s * s;
+         print(&quot;Area of Square is &quot;, a);
+         return;
+      def acircle(r):
+         pi = 3.142;
+         a = pi * (r * r);
+         print(&quot; Area of Circle is &quot;, a);
+         return;
+      def atri(b, h):
+         a = 0.5 * b * h;
+         print(&quot; Area of Triangle is &quot;, a);
+         return;
+      print(&quot;\t \t Area of Rectangle:&quot;);
+      l, b = map(int, input(&quot;Enter length and breadth of a Rectangle: &quot;).split())
+      arect(l, b)
+      print(&quot;\n&quot;)
+      print(&quot;\t \t Area of Square:&quot;);
+      s = int(input(&quot;Enter side value of a Sqaure: &quot;));
+      asquare(s)
+      print(&quot;\n&quot;)
+      print(&quot;\t \t Area of Circle:&quot;);
+      r = int(input(&quot;Enter radius value of a circle: &quot;));
+      acircle(r)
+      print(&quot;\n&quot;)
+      print(&quot; \t \t Area of Triangle:&quot;);
+      b, h = map(int, input(&quot;Enter base and height value of Triangle: &quot;).split());
+      atri(b, h);
+
+   4. Program to generate Pythagorean Triplets.
+   
+      Solution: a2 + b2 = c2.
+      limit = int(input(&quot;Enter the limit: &quot;));
+      c, m = 0, 2;
+      while(c &lt; limit):
+         for n in range(1, m+1):
+            a = pow(m, 2) - pow(n, 2);
+            b = 2 * m * n;
+            c = pow(m, 2) + pow(n, 2);
+            if(c &gt; limit):
+               break;
+            if(a==0 or b==0 or c==0):
+               break;
+            print(a, b, c);
+         m = m+1;
+
+
+   5. Program to display the first n terms of Fibonacci series.
+
+      a, b = 0, 1;
+      sum = 0;
+      count = 1;
+      
+      n = int(input(&quot;Enter n value: &quot;));
+      
+      if(n &lt;= 0):
+          print(&quot;Enter positive number&quot;);
+      
+      elif(n == 1):
+          print(&quot;Fibonacci series of &quot;, n ,&quot; is &quot;, b);
+      
+      else :
+      
+          print(&quot;\n Fibonacci Series of &quot;, n ,&quot; is&quot;);
+      
+      while(n &gt;= count):
+          print(&quot;\t&quot;, sum);
+          count += 1;
+      
+          a = b;
+          b = sum;
+          sum = a + b;
+   
+
+
+   6. Program to check whether a given number is Armstrong number or not.
+
+      n = int(input(&quot;Enter a number: &quot;));
+      import math
+      sum = 0;
+      temp = n;
+      
+      while (temp &gt; 0):
+          digit = temp % 10;
+          sum = sum + pow(digit, 3);
+          temp = math.floor(temp / 10);
+      
+      if ( n == sum):
+          print(n, &quot; is an Armstrong number&quot;);
+      else:
+          print(n, &quot; is not an Armstrong number&quot;);
+
+
+   7. Program to find sum of the following series for n terms: 1-2/2! + 3/3! – 4/4! + ...............n/n!.
+
+      t = [];
+      total = 0;
+      def fact(num):
+          f = 1.0;
+          while(num &gt; 0):
+              f = f * num;
+              num = num - 1;
+          return(f);
+      
+      n=int(input(&quot;Enter no of terms: &quot;));
+      for x in range(1, n+1):
+          terms = x / (fact(x));
+          if(x % 2 == 0):
+              terms = -terms;
+          t.append(terms);
+          total = total + terms;
+      print(t);
+      print(&quot;\n the sum of series is: &quot;, total);
+
+
+   8. Program to calculate the sum of two compatible matrices.
+
+      rows = int(input(&quot;Enter number of rows: &quot;));
+      cols = int(input(&quot;Enter number of columns: &quot;))
+      print(&quot;\n&quot;)
+      print(&quot;Enter the elements of first matrix: &quot;);
+      matrix_a = [[ int(input()) for i in range(cols)] for i in range(rows)]
+      print(&quot;\n First matrix is:&quot;);
+      for n in matrix_a:
+          print(n)
+      print(&quot;\n&quot;)
+      print(&quot;Enter the elements of second matrix: &quot;);
+      matrix_b = [[ int(input()) for i in range(cols)] for i in range(rows)]
+      print(&quot;\n Second matrix is:&quot;);
+      for n in matrix_b:
+          print(n)
+      print(&quot;\n&quot;)
+      result = [[0 for i in range(cols)] for i in range(rows)]
+      for i in range(rows):
+          for j in range(cols):
+              result[i][j] = matrix_a[i][j] + matrix_b[i][j]
+      print(&quot;Sum of two matrices is: &quot;);
+      for r in result:
+          print(&quot;\t&quot;, r);
+
+
+   9. Program to calculate the product of two compatible matrices.
+
+      r1 = int(input(&quot;Enter the number of rows of first matrix: &quot;));
+      c1 = int(input(&quot;Enter the number of columns of first matrix: &quot;));
+      f_matrix = [[0 for i in range(c1)] for j in range(r1)];
+      print(&quot;Enter the elements of first matrix: &quot;);
+      for i in range(r1):
+          for j in range(c1):
+              x = int(input());
+              f_matrix[i][j] = x;
+      r2 = int(input(&quot;\nEnter the number of rows of second matrix: &quot;));
+      c2 = int(input(&quot;Enter the columns of second matrix: &quot;));
+      s_matrix = [[0 for i in range(c2)] for j in range(r2)];
+      print(&quot;Enter the elements of second matrix: &quot;);
+      for i in range(r2):
+          for j in range(c2):
+              x = int(input());
+              s_matrix[i][j] = x;
+      if(c1 == r2):
+          p = [[0 for i in range(c2)] for j in range(r1)];
+          for i in range(len(f_matrix)):
+              for j in range(c2):
+                  for k in range(len(s_matrix)):
+                      p[i][j] = p[i][j] + (f_matrix[i][k] * s_matrix[k][j]);
+          print(&quot;\n Product of first and second matrix: &quot;);
+          for i in range(r1):
+              for j in range(c2):
+                  print(&quot;\t&quot;, p[i][j], end=&quot; &quot;);
+              print();
+      else:
+          print(&quot;Matrix multiplication is not possible&quot;);
+
+
+   10. Program to calculate the mass “m” in a chemical reaction. The mass m (in gms) varies according to the formula m=60/ (t+2), where “t” is the time in hours. Sketch a graph for t vs. m where t&gt;=0.
+
+      import matplotlib.pyplot as plt
+
+      tlist = [];
+      mlist = [];
+      interval = int(input(&quot;Enter interval: &quot;));
+      for i in range(1, interval + 1):
+          t = int(input(&quot;Enter tvalue: &quot;));
+          tlist.append(t);
+          m = 60 / (t + 2);
+          mlist.append(m)
+      print(&quot;\n Corresponding mass value: &quot;, m)
+      plt.plot(tlist, mlist, &#39;blue&#39;);
+      plt.ylabel(&#39;Mass&#39;);
+      plt.xlabel(&#39;Time&#39;);
+      plt.show();
+
+   11. Input initial velocity and acceleration and plot the following graphs.
+      I. Velocity With Respect To Time (v=u+at)
+      II. Distance With Respect To Time (s=u*t + 0.5*a*t*t)
+      III. Distance With Respect To Velocity (s=(v*v-u*u)/ (2*a))
+
+      import matplotlib.pyplot as plt
+      t = 0;
+      vf = [];
+      d = [];
+      def velocity(invel, acc):
+          if(invel &gt;= 0 and acc &gt;= 0):
+              for t in range(0, 10):
+                  v = u + a * t;
+                  t = t + 10;
+                  print(v);
+                  vf.append(v);
+              print(vf);
+              plt.plot(vf);
+              plt.ylabel(&quot;Some numbers&quot;);
+              plt.show();
+          else:
+              print(&quot;Enter positive numbers&quot;);
+      def disttime(invel, acc):
+          if(invel &gt;= 0 and acc &gt;= 0):
+              for t in range(0, 10):
+                  s = u * t + 0.5 * a * t * t;
+                  t = t + 10;
+                  print(s);
+                  d.append(s);
+              print(d);
+              plt.plot(d);
+              plt.ylabel(&quot;Some numbers&quot;);
+              plt.show();
+          else:
+              print(&quot;Enter positive numbers&quot;);
+      def distvel(invel, acc):
+          if(invel &gt;= 0 and acc &gt;= 0):
+              for v in range(0, 10):
+                  s = ( v * v - u * v) / (2 * a);
+                  v = v + 10;
+                  print(s);
+                  d.append(s);
+              print(d);
+              plt.plot(d);
+              plt.ylabel(&quot;Some numbers&quot;);
+              plt.show();
+          else:
+              print(&quot;Enter positive numbers&quot;);
+      u = int(input(&quot;Enter initial velocity: &quot;));
+      a = int(input(&quot;Enter initial acceleration: &quot;));
+
+      while True:
+          print(&quot;\n&quot;);
+          print(&quot;1. Velocity wrt to time&quot;);
+          print(&quot;2. Distance wrt to time&quot;);
+          print(&quot;3. Distance wrt to velocity&quot;);
+          print(&quot;4. Exit&quot;);
+          ch = int(input(&quot;Enter your choice: &quot;));
+          if ch == 1:
+              velocity(u, a);
+          elif ch == 2:
+              disttime(u, a);
+          elif ch == 3:
+              distvel(u, a);
+          elif ch == 4:
+              exit();
+
+
+   12. A population of 1000 bacteria is introduced into a nutrient medium. The population “p” grows as follows:
+       P(t) = (15000(1+t))/(15+e) where the time “t” is measured in hours. Write a Program to determine the size of the population at given time “t” and plot a graph for “p” vs “t” for the specified time interval.
+
+       import matplotlib.pyplot as plt
+       tlist = [];
+       plist = [];
+       e = 1000;
+       inter = int(input(&quot;Enter number of intervals: &quot;));
+       size = int(input(&quot;Enter size of each intervals: &quot;));
+       for i in range(0, inter):
+           t = int(i) * size;
+           print(t);
+           tlist.append(t);
+           p = (15000 * (1 + t)) / (15 + e);
+           plist.append(p);
+       plt.plot(tlist, plist);
+       plt.xlabel(&quot;Time&quot;);
+       plt.ylabel(&quot;Population&quot;);
+       plt.show();
+
+   
+
+   computer graphics Programing
+
+   1. Write a program to draw a straight line using DDA technique.
+
+      #include&lt;iostream.h&gt;
+      #include&lt;conio.h&gt;
+      #include&lt;graphics.h&gt;
+      #include&lt;math.h&gt;
+      #include&lt;dos.h&gt;
+      void ddaline(int,int,int,int);
+      void main()
+      {
+         int gd=DETECT,gm;
+         int x1,y1,x2,y2;
+         clrscr();
+         cout&lt;&lt;&quot;\n Enter first end point (x1,y1): &quot;;
+         cin&gt;&gt;x1&gt;&gt;y1;
+         cout&lt;&lt;&quot;\n Enter second end point (x2,y2): &quot;;
+         cin&gt;&gt;x2&gt;&gt;y2;
+         initgraph(&amp;gd,&amp;gm,&quot;C:\\tc\\bgi&quot;);
+         cleardevice();
+         ddaline(x1,y1,x2,y2);
+         getch();
+         closegraph();
+      }
+      void ddaline(int x1, int y1, int x2, int y2)
+      {
+         float dx, dy, steps, xinc, yinc;
+         float x=x1, y=y1, i;
+         dx=abs(x1-x2);
+         dy=abs(y1-y2);
+         if(dx&gt;dy)
+         {
+            steps=dx;
+         }
+         else
+         {
+            steps=dy;
+         }
+         xinc=dx/steps;
+         yinc=dy/steps;
+         putpixel(x,y,RED);
+         for(i=1;i&lt;=steps;i++)
+         {
+            x=x+xinc;
+            y=y+yinc;
+            putpixel(x,y,RED);
+            // delay(100);
+         }
+      }
+
+   2. Write a program to draw a line using Bresenham's technique.
+
+      #include&lt;iostream.h&gt;
+      #include&lt;conio.h&gt;
+      #include&lt;graphics.h&gt;
+      #include&lt;math.h&gt;
+      #include&lt;dos.h&gt;
+      void bresenline(int, int, int, int);
+      void main()
+      {
+         int gd=DETECT,gm;
+         int x1,y1,x2,y2;
+         clrscr();
+         cout&lt;&lt;&quot;\n Enter first end point (x1,y1): &quot;;
+         cin&gt;&gt;x1&gt;&gt;y1;
+         cout&lt;&lt;&quot;\n Enter second end point (x2,y2): &quot;;
+         cin&gt;&gt;x2&gt;&gt;y2;
+         initgraph(&amp;gd,&amp;gm,&quot;C:\\tc\\bgi&quot;);
+         cleardevice();
+         bresenline(x1,y1,x2,y2);
+         getch();
+         closegraph();
+      }
+      void bresenline(int x1, int y1, int x2, int y2)
+      {
+         float dx, dy, p, x, y, xend;
+         dx=abs(x1-x2);
+         dy=abs(y1-y2);
+         p=2*dy-dx;
+         if(x1&lt;x2)
+         {
+           x=x1;
+           y=y1;
+           xend=x2;
+         }
+         else
+         {
+           x=x2;
+           y=y2;
+           xend=x1;
+         }
+         while(x&lt;=xend)
+         {
+           putpixel(x,y,RED);
+           // delay(100);
+           if(p&lt;0)
+           {
+             x++;
+             p=p+2*dy;
+           }
+           else
+           {
+             x++;
+             y++;
+             p=p+2*(dy-dx);
+           }
+         }
+      }
+      
+   3. Write a program to draw a circle using DDA technique.
+
+      #include&lt;iostream.h&gt;
+      #include&lt;conio.h&gt;
+      #include&lt;graphics.h&gt;
+      #include&lt;math.h&gt;
+      #include&lt;dos.h&gt;
+      void ddacircle(int, int, int);
+      void main()
+      {
+         int gd=DETECT,gm;
+         int xc, yc, r;
+         clrscr();
+         cout&lt;&lt;&quot;\n Enter first center point (xc, yc): &quot;;
+         cin&gt;&gt;xc&gt;&gt;yc;
+         cout&lt;&lt;&quot;\n Enter radius r: &quot;;
+         cin&gt;&gt;r;
+         initgraph(&amp;gd,&amp;gm,&quot;C:\\tc\\bgi&quot;);
+         cleardevice();
+         ddacircle(xc,yc,r);
+         getch();
+         closegraph();
+      }
+      void ddacircle(int xc, int yc,int r)
+      {
+         int x, y, theta;
+         for(theta=0;theta&lt;=360;theta++)
+         {
+           x=xc+r*cos(theta);
+           y=yc+r*sin(theta);
+           putpixel(x,y,RED);
+           // delay(50);
+         }
+      }
+
+
+   4. Write a program to draw a circle using Bresenham's technique.
+
+      #include&lt;iostream.h&gt;
+      #include&lt;conio.h&gt;
+      #include&lt;graphics.h&gt;
+      #include&lt;math.h&gt;
+      #include&lt;dos.h&gt;
+      void bcircle(int, int, int);
+      void plotpixel(int,int, int, int);
+      void main()
+      {
+         int gd=DETECT,gm;
+         int xc, yc, r;
+         clrscr();
+         cout&lt;&lt;&quot;\n Enter center point (xc, yc): &quot;;
+         cin&gt;&gt;xc&gt;&gt;yc;
+         cout&lt;&lt;&quot;\n Enter radius r: &quot;;
+         cin&gt;&gt;r;
+         initgraph(&amp;gd,&amp;gm,&quot;C:\\tc\\bgi&quot;);
+         cleardevice();
+         bcircle(xc, yc, r);
+         getch();
+         closegraph();
+      }
+      void bcircle(int xc, int yc, int r)
+      {
+         int x=0, y=r, p=1-r;
+         while(x&lt;y)
+         {
+           if(p&lt;0)
+           {
+             x++;
+             p=p+2*x+1;
+           }
+           else
+           {
+             x++;
+             y--;
+             p=p+2*(x-y)+1;
+           }
+           // delay(50);
+           plotpixel(xc, yc, x, y);
+         }
+      }
+      void plotpixel(int xc, int yc,int x, int y)
+      {
+         putpixel(xc+x, yc+y, RED);
+         putpixel(xc-x, yc-y, RED);
+         putpixel(xc+x, yc-y, RED);
+         putpixel(xc-x, yc+y, RED);
+         putpixel(xc+y, yc+x, RED);
+         putpixel(xc-y, yc-x, RED);
+         putpixel(xc+y, yc-x, RED);
+         putpixel(xc-y, yc+x, RED);
+      }
+
+
+   5. Write a program to draw a triangle to perform Translation.
+
+      #include&lt;iostream.h&gt;
+      #include&lt;conio.h&gt;
+      #include&lt;graphics.h&gt;
+      #include&lt;dos.h&gt;
+      void triangle();
+      void main()
+      {
+         int gd=DETECT,gm;
+         clrscr();
+         initgraph(&amp;gd, &amp;gm, &quot;c:\\tc\\bgi&quot;);
+         triangle();
+         getch();
+         closegraph();
+      }
+      void triangle()
+      {
+         int x1, y1, x2, y2, x3, y3;
+         int tx, ty;
+         cout&lt;&lt;&quot;\n Enter first end point : &quot;;
+         cin&gt;&gt;x1&gt;&gt;y1;
+      
+         cout&lt;&lt;&quot;\n Enter second end point : &quot;;
+         cin&gt;&gt;x2&gt;&gt;y2;
+      
+         cout&lt;&lt;&quot;\n Enter third end point : &quot;;
+         cin&gt;&gt;x3&gt;&gt;y3;
+      
+         line(x1, y1, x2, y2);
+         line(x2, y2, x3, y3);
+         line(x3, y3, x1, y1);
+      
+         cout&lt;&lt;&quot;\n Enter the Translation vectors tx &amp; ty : &quot;;
+         cin&gt;&gt;tx&gt;&gt;ty;
+      
+         x1=x1+tx;
+         y1=y1+ty;
+      
+         x2=x2+tx;
+         y2=y2+ty;
+      
+         x3=x3+tx;
+         y3=y3+ty;
+      
+         line(x1, y1, x2, y2);
+         line(x2, y2, x3, y3);
+         line(x3, y3, x1, y1);
+      }
+
+
+   6. Write a program to draw a triangle to perform Scaling.
+
+      #include&lt;iostream.h&gt;
+      #include&lt;conio.h&gt;
+      #include&lt;graphics.h&gt;
+      #include&lt;dos.h&gt;
+      void triangle();
+      void main()
+      {
+         int gd=DETECT,gm;
+         clrscr();
+         initgraph(&amp;gd, &amp;gm, &quot;c:\\tc\\bgi&quot;);
+         triangle();
+         getch();
+         closegraph();
+      }
+      void triangle()
+      {
+         int x1, y1, x2, y2, x3, y3;
+         int sx, sy;
+         cout&lt;&lt;&quot;\n Enter first end point : &quot;;
+         cin&gt;&gt;x1&gt;&gt;y1;
+      
+         cout&lt;&lt;&quot;\n Enter second end point : &quot;;
+         cin&gt;&gt;x2&gt;&gt;y2;
+      
+         cout&lt;&lt;&quot;\n Enter third end point : &quot;;
+         cin&gt;&gt;x3&gt;&gt;y3;
+      
+         line(x1, y1, x2, y2);
+         line(x2, y2, x3, y3);
+         line(x3, y3, x1, y1);
+      
+         cout&lt;&lt;&quot;\n Enter the Scaling vectors Sx &amp; Sy : &quot;;
+         cin&gt;&gt;sx&gt;&gt;sy;
+      
+         x1=x1*sx;
+         y1=y1*sy;
+      
+         x2=x2*sx;
+         y2=y2*sy;
+      
+         x3=x3*sx;
+         y3=y3*sy;
+      
+         line(x1, y1, x2, y2);
+         line(x2, y2, x3, y3);
+         line(x3, y3, x1, y1);
+      }
+
+
+   7. Write a program to draw a triangle to perform Rotation.
+
+      #include&lt;iostream.h&gt;
+      #include&lt;conio.h&gt;
+      #include&lt;graphics.h&gt;
+      #include&lt;dos.h&gt;
+      #include&lt;math.h&gt;
+      void triangle(int, int, int, int, int, int);
+      void main()
+      {
+         int gd=DETECT, gm;
+         int x1, y1, x2, y2, x3, y3;
+         clrscr();
+         initgraph(&amp;gd, &amp;gm, &quot;c:\\tc\\bgi&quot;);
+         cleardevice();
+      
+         cout&lt;&lt;&quot;\n Enter first end point : &quot;;
+         cin&gt;&gt;x1&gt;&gt;y1;
+      
+         cout&lt;&lt;&quot;\n Enter second end point : &quot;;
+         cin&gt;&gt;x2&gt;&gt;y2;
+      
+         cout&lt;&lt;&quot;\n Enter third end point : &quot;;
+         cin&gt;&gt;x3&gt;&gt;y3;
+      
+         triangle(x1, y1, x2, y2, x3, y3);
+         getch();
+         closegraph();
+      }
+      void triangle(int x1, int y1, int x2, int y2, int x3, int y3)
+      {
+         int t;
+         cleardevice();
+      
+         line(x1, y1, x2, y2);
+         line(x2, y2, x3, y3);
+         line(x3, y3, x1, y1);
+      
+         cout&lt;&lt;&quot;\n Enter Rotation angle(theta) : &quot;;
+         cin&gt;&gt;t;
+      
+         x1=x1*cos(t)-y1*sin(t);
+         y1=x1*sin(t)+y2*cos(t);
+      
+         x2=x2*cos(t)-y2*sin(t);
+         y2=x2*sin(t)+y2*cos(t);
+      
+         x3=x3*cos(t)-y3*sin(t);
+         y3=x3*sin(t)+y3*cos(t);
+      
+         line(x1, y1, x2, y2);
+         line(x2, y2, x3, y3);
+         line(x3, y3, x1, y1);
+      }
+
+   8. Write a program to animate a man walking with an umberalla.
+
+      #include&lt;iostream.h&gt;
+      #include&lt;conio.h&gt;
+      #include&lt;graphics.h&gt;
+      #include&lt;stdlib.h&gt;
+      #include&lt;dos.h&gt;
+      void main()
+      {
+         int  gd=DETECT,gm;
+         int x1,y1,x2,y2,x3,y3,i;
+         clrscr();
+          initgraph(&amp;gd,&amp;gm,&quot;c:\\tc\\bg i&quot;);
+          cleardevice();
+          x1=100;
+          y1=330;
+          x2=150;
+          y2=330;
+          x3=125;
+          y3=280;
+          for(i=0;i&lt;300;i=i+10)
+          {
+              for(x1=100,x2=150;x1&lt;150,x2&gt;100;x1=x1+2,x2=x2-2)
+              {
+                  delay(15);
+                  cleardevice();
+                  line(x3+i,240,150+i,240);   //left hand
+                  line(x3+i,240,x1+i,270);    //right hand
+                  line(150+i,240,150+i,180);  //umbrella stick
+                  ellipse(150+i,185,0,200,35,5);  //umbrella
+                  line(x1+i,y1,x3+i,y3);  //leg
+                  line(x2+i,y2,x3+i,y3);  //leg
+                  ellipse(125+i,255,0,360,5,25);  //body
+                  circle(125+i,220,7);    //head
+              }
+          }
+         getch();
+          closegraph();	
        
-       
-     sub1 = int(input(&quot;Enter first subject marks: &quot;));
-     sub2 = int(input(&quot;Enter second subject marks: &quot;));
-     sub3 = int(input(&quot;Enter third subject marks: &quot;));
+      }
 
-     marks = sub1 + sub2 + sub3;
-     tmarks = 300;
-
-     print(&quot;Obtained marks = &quot;, marks);
-
-     per = (marks / tmarks) * 100;
-
-     print(&quot;Percentage of Student is &quot;, per);
-
-     if(per &gt;= 80):
-        print(&quot; Grade A&quot;);
-
-     elif(per &gt;= 70 or per == 60):
-        print(&quot; Grade B&quot;);
-
-     elif(per &gt;= 60 or per == 40):
-        print(&quot; Grade C&quot;);
-
-     elif(per &gt;= 40):
-        print(&quot; Grade D&quot;);
-
-     elif(per &lt; 40):
-        print(&quot; Grade E&quot;);
-
-    computer graphics
-
-    1. Write a program to draw a straight line using DDA technique.
-            #include&lt;iostream.h&gt;
-            #include&lt;conio.h&gt;
-            #include&lt;graphics.h&gt;
-            #include&lt;math.h&gt;
-            #include&lt;dos.h&gt;
-            void ddaline(int,int,int,int);
-            void main()
-            {
-               int gd=DETECT,gm;
-               int x1,y1,x2,y2;
-               clrscr();
-               cout&lt;&lt;&quot;\n Enter first end point (x1,y1): &quot;;
-               cin&gt;&gt;x1&gt;&gt;y1;
-               cout&lt;&lt;&quot;\n Enter second end point (x2,y2): &quot;;
-               cin&gt;&gt;x2&gt;&gt;y2;
-               initgraph(&amp;gd,&amp;gm,&quot;C:\\tc\\bgi&quot;);
-               cleardevice();
-               ddaline(x1,y1,x2,y2);
-               getch();
-               closegraph();
-            }
-            void ddaline(int x1, int y1, int x2, int y2)
-            {
-               float dx, dy, steps, xinc, yinc;
-               float x=x1, y=y1, i;
-               dx=abs(x1-x2);
-               dy=abs(y1-y2);
-               if(dx&gt;dy)
-               {
-                 steps=dx;
-               }
-               else
-               {
-                 steps=dy;
-               }
-               xinc=dx/steps;
-               yinc=dy/steps;
-               putpixel(x,y,RED);
-               for(i=1;i&lt;=steps;i++)
-               {
-                 x=x+xinc;
-                 y=y+yinc;
-                 putpixel(x,y,RED);
-                 // delay(100);
-               }
-            }
-        
         </pre>
 </body>
 </html>
