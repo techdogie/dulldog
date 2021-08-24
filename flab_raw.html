@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flab_raw</title>
+</head>
+<body>
+    <pre>
+    Python
+
+    1. Program to convert the given temperature from Fahrenheit to Celcius and vice versa depending upon user’s choice.
+        
+    While True:
+    print(&quot;1: Celcius to Fahrenheit&quot;);
+    print(&quot;2: Fahrenheit to Celcius&quot;);
+    print(&quot;3: Exit&quot;);
+    ch=int(input(&quot;Enter your choice &quot;));
+    if ch == 1:
+       cel = float(input(&quot;Enter temperature in Celcius &quot;));
+       fah = (cel * 9/5) + 32;
+       print(&quot;%f Celcius = %f Fahrenheit&quot; %(cel, fah));
+    if ch == 2:
+       fah = float(input(&quot;Enter temperature in Fahrenheit &quot;));
+       cel = (fah - 32) * 5/9;
+       print(&quot;%f Fahrenheit = %f Celcius&quot; %(fah, cel));
+    if ch &gt;= 3:
+       exit();
+    2. Program to calculate total marks, percentage and grade of student. Marks obtained in each of three subjects are to be input by the user. Assign grades according to the following criteria:
+       Grade A: Percentage &gt;= 80
+       Grade B: Percentage &gt;= 70 or Percentage == 60
+       Grade C: Percentage &gt;= 60 or Percentage == 40
+       Grade D: Percentage &gt;= 40
+       Grade E: Percentage &lt;40
+       
+       
+     sub1 = int(input(&quot;Enter first subject marks: &quot;));
+     sub2 = int(input(&quot;Enter second subject marks: &quot;));
+     sub3 = int(input(&quot;Enter third subject marks: &quot;));
+
+     marks = sub1 + sub2 + sub3;
+     tmarks = 300;
+
+     print(&quot;Obtained marks = &quot;, marks);
+
+     per = (marks / tmarks) * 100;
+
+     print(&quot;Percentage of Student is &quot;, per);
+
+     if(per &gt;= 80):
+        print(&quot; Grade A&quot;);
+
+     elif(per &gt;= 70 or per == 60):
+        print(&quot; Grade B&quot;);
+
+     elif(per &gt;= 60 or per == 40):
+        print(&quot; Grade C&quot;);
+
+     elif(per &gt;= 40):
+        print(&quot; Grade D&quot;);
+
+     elif(per &lt; 40):
+        print(&quot; Grade E&quot;);
+
+    computer graphics
+
+    1. Write a program to draw a straight line using DDA technique.
+            #include&lt;iostream.h&gt;
+            #include&lt;conio.h&gt;
+            #include&lt;graphics.h&gt;
+            #include&lt;math.h&gt;
+            #include&lt;dos.h&gt;
+            void ddaline(int,int,int,int);
+            void main()
+            {
+               int gd=DETECT,gm;
+               int x1,y1,x2,y2;
+               clrscr();
+               cout&lt;&lt;&quot;\n Enter first end point (x1,y1): &quot;;
+               cin&gt;&gt;x1&gt;&gt;y1;
+               cout&lt;&lt;&quot;\n Enter second end point (x2,y2): &quot;;
+               cin&gt;&gt;x2&gt;&gt;y2;
+               initgraph(&amp;gd,&amp;gm,&quot;C:\\tc\\bgi&quot;);
+               cleardevice();
+               ddaline(x1,y1,x2,y2);
+               getch();
+               closegraph();
+            }
+            void ddaline(int x1, int y1, int x2, int y2)
+            {
+               float dx, dy, steps, xinc, yinc;
+               float x=x1, y=y1, i;
+               dx=abs(x1-x2);
+               dy=abs(y1-y2);
+               if(dx&gt;dy)
+               {
+                 steps=dx;
+               }
+               else
+               {
+                 steps=dy;
+               }
+               xinc=dx/steps;
+               yinc=dy/steps;
+               putpixel(x,y,RED);
+               for(i=1;i&lt;=steps;i++)
+               {
+                 x=x+xinc;
+                 y=y+yinc;
+                 putpixel(x,y,RED);
+                 // delay(100);
+               }
+            }
+        
+        </pre>
+</body>
+</html>
